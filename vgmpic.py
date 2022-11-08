@@ -475,7 +475,7 @@ viewerrom="eNrt1F1MW2UYB/D/+a9KxSnla+LnjmwDBk4PpSBgGS1wgFbaQPkQlm0pC6Pbsi0MgbClI
 
 
 if __name__ == "__main__":
-    print("VGM+PNG to MD v1.0 by insane/rabenauge^tscc")
+    print("VGM+PNG to MD v1.0.1 by insane/rabenauge^tscc")
     if (len(sys.argv)==1):
         print("Converts VGM and/or PNG file to a Sega MegaDrive/Genesis ROM\n")
         print("Usage:\n  vgmpic.py [infile.vgm] [infile.png] [outfile.md]\n")
@@ -498,6 +498,7 @@ if __name__ == "__main__":
 
     for arg in sys.argv:
         if arg.upper().endswith('.VGM'):   fnamvgm=arg
+        elif arg.upper().endswith('.VGZ'):   fnamvgm=arg
         elif arg.upper().endswith('.PNG'): fnampng=arg
         elif arg.upper().endswith('.MD'):  fnamrom=arg
         elif arg.upper().endswith('.BIN'): fnamrom=arg
