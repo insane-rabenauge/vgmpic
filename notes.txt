@@ -1,0 +1,232 @@
+ROM Layout:
+- MD CODE
+- PICTURE DATA BLOCK
+->32bit	   	BLOCK SIZE,0=no picture stored
++>16bit*16 	PICTURE PALETTE
++>4bit*320*224	PICTURE DATA
+- SAMPLE DATA BLOCK
+->32bit	   	BLOCK SIZE,0=no samples stored
++>32bit*samples SAMPLE SIZE FOR EACH SAMPLE, up to 256 samples
++>8bit*size	SAMPLE DATA
+- VGM DATA
+->8bit Stream ID + 8bit Data until end of ROM
+
+packed vgm stream ids:
+00 00: Stop Song
+00 xx: (xx>0): Delay XX frames
+30 xx: FM REG 022 set
+31 xx: FM REG 024 set
+32 xx: FM REG 025 set
+33 xx: FM REG 026 set
+34 xx: FM REG 027 set
+35 xx: FM REG 028 set
+36 xx: FM REG 02A set
+37 xx: FM REG 02B set
+38 xx: FM REG 030 set
+39 xx: FM REG 031 set
+3A xx: FM REG 032 set
+3B xx: FM REG 034 set
+3C xx: FM REG 035 set
+3D xx: FM REG 036 set
+3E xx: FM REG 038 set
+3F xx: FM REG 039 set
+40 xx: FM REG 03A set
+41 xx: FM REG 03C set
+42 xx: FM REG 03D set
+43 xx: FM REG 03E set
+44 xx: FM REG 040 set
+45 xx: FM REG 041 set
+46 xx: FM REG 042 set
+47 xx: FM REG 044 set
+48 xx: FM REG 045 set
+49 xx: FM REG 046 set
+4A xx: FM REG 048 set
+4B xx: FM REG 049 set
+4C xx: FM REG 04A set
+4D xx: FM REG 04C set
+4E xx: FM REG 04D set
+4F xx: FM REG 04E set
+50 xx: FM REG 050 set
+51 xx: FM REG 051 set
+52 xx: FM REG 052 set
+53 xx: FM REG 054 set
+54 xx: FM REG 055 set
+55 xx: FM REG 056 set
+56 xx: FM REG 058 set
+57 xx: FM REG 059 set
+58 xx: FM REG 05A set
+59 xx: FM REG 05C set
+5A xx: FM REG 05D set
+5B xx: FM REG 05E set
+5C xx: FM REG 060 set
+5D xx: FM REG 061 set
+5E xx: FM REG 062 set
+5F xx: FM REG 064 set
+60 xx: FM REG 065 set
+61 xx: FM REG 066 set
+62 xx: FM REG 068 set
+63 xx: FM REG 069 set
+64 xx: FM REG 06A set
+65 xx: FM REG 06C set
+66 xx: FM REG 06D set
+67 xx: FM REG 06E set
+68 xx: FM REG 070 set
+69 xx: FM REG 071 set
+6A xx: FM REG 072 set
+6B xx: FM REG 074 set
+6C xx: FM REG 075 set
+6D xx: FM REG 076 set
+6E xx: FM REG 078 set
+6F xx: FM REG 079 set
+70 xx: FM REG 07A set
+71 xx: FM REG 07C set
+72 xx: FM REG 07D set
+73 xx: FM REG 07E set
+74 xx: FM REG 080 set
+75 xx: FM REG 081 set
+76 xx: FM REG 082 set
+77 xx: FM REG 084 set
+78 xx: FM REG 085 set
+79 xx: FM REG 086 set
+7A xx: FM REG 088 set
+7B xx: FM REG 089 set
+7C xx: FM REG 08A set
+7D xx: FM REG 08C set
+7E xx: FM REG 08D set
+7F xx: FM REG 08E set
+80 xx: FM REG 090 set
+81 xx: FM REG 091 set
+82 xx: FM REG 092 set
+83 xx: FM REG 094 set
+84 xx: FM REG 095 set
+85 xx: FM REG 096 set
+86 xx: FM REG 098 set
+87 xx: FM REG 099 set
+88 xx: FM REG 09A set
+89 xx: FM REG 09C set
+8A xx: FM REG 09D set
+8B xx: FM REG 09E set
+8C xx: FM REG 0A0 set
+8D xx: FM REG 0A1 set
+8E xx: FM REG 0A2 set
+8F xx: FM REG 0A4 set
+90 xx: FM REG 0A5 set
+91 xx: FM REG 0A6 set
+92 xx: FM REG 0A8 set
+93 xx: FM REG 0A9 set
+94 xx: FM REG 0AA set
+95 xx: FM REG 0AC set
+96 xx: FM REG 0AD set
+97 xx: FM REG 0AE set
+98 xx: FM REG 0B0 set
+99 xx: FM REG 0B1 set
+9A xx: FM REG 0B2 set
+9B xx: FM REG 0B4 set
+9C xx: FM REG 0B5 set
+9D xx: FM REG 0B6 set
+9E xx: FM REG 130 set
+9F xx: FM REG 131 set
+A0 xx: FM REG 132 set
+A1 xx: FM REG 134 set
+A2 xx: FM REG 135 set
+A3 xx: FM REG 136 set
+A4 xx: FM REG 138 set
+A5 xx: FM REG 139 set
+A6 xx: FM REG 13A set
+A7 xx: FM REG 13C set
+A8 xx: FM REG 13D set
+A9 xx: FM REG 13E set
+AA xx: FM REG 140 set
+AB xx: FM REG 141 set
+AC xx: FM REG 142 set
+AD xx: FM REG 144 set
+AE xx: FM REG 145 set
+AF xx: FM REG 146 set
+B0 xx: FM REG 148 set
+B1 xx: FM REG 149 set
+B2 xx: FM REG 14A set
+B3 xx: FM REG 14C set
+B4 xx: FM REG 14D set
+B5 xx: FM REG 14E set
+B6 xx: FM REG 150 set
+B7 xx: FM REG 151 set
+B8 xx: FM REG 152 set
+B9 xx: FM REG 154 set
+BA xx: FM REG 155 set
+BB xx: FM REG 156 set
+BC xx: FM REG 158 set
+BD xx: FM REG 159 set
+BE xx: FM REG 15A set
+BF xx: FM REG 15C set
+C0 xx: FM REG 15D set
+C1 xx: FM REG 15E set
+C2 xx: FM REG 160 set
+C3 xx: FM REG 161 set
+C4 xx: FM REG 162 set
+C5 xx: FM REG 164 set
+C6 xx: FM REG 165 set
+C7 xx: FM REG 166 set
+C8 xx: FM REG 168 set
+C9 xx: FM REG 169 set
+CA xx: FM REG 16A set
+CB xx: FM REG 16C set
+CC xx: FM REG 16D set
+CD xx: FM REG 16E set
+CE xx: FM REG 170 set
+CF xx: FM REG 171 set
+D0 xx: FM REG 172 set
+D1 xx: FM REG 174 set
+D2 xx: FM REG 175 set
+D3 xx: FM REG 176 set
+D4 xx: FM REG 178 set
+D5 xx: FM REG 179 set
+D6 xx: FM REG 17A set
+D7 xx: FM REG 17C set
+D8 xx: FM REG 17D set
+D9 xx: FM REG 17E set
+DA xx: FM REG 180 set
+DB xx: FM REG 181 set
+DC xx: FM REG 182 set
+DD xx: FM REG 184 set
+DE xx: FM REG 185 set
+DF xx: FM REG 186 set
+E0 xx: FM REG 188 set
+E1 xx: FM REG 189 set
+E2 xx: FM REG 18A set
+E3 xx: FM REG 18C set
+E4 xx: FM REG 18D set
+E5 xx: FM REG 18E set
+E6 xx: FM REG 190 set
+E7 xx: FM REG 191 set
+E8 xx: FM REG 192 set
+E9 xx: FM REG 194 set
+EA xx: FM REG 195 set
+EB xx: FM REG 196 set
+EC xx: FM REG 198 set
+ED xx: FM REG 199 set
+EE xx: FM REG 19A set
+EF xx: FM REG 19C set
+F0 xx: FM REG 19D set
+F1 xx: FM REG 19E set
+F2 xx: FM REG 1A0 set
+F3 xx: FM REG 1A1 set
+F4 xx: FM REG 1A2 set
+F5 xx: FM REG 1A4 set
+F6 xx: FM REG 1A5 set
+F7 xx: FM REG 1A6 set
+F8 xx: FM REG 1B0 set
+F9 xx: FM REG 1B1 set
+FA xx: FM REG 1B2 set
+FB xx: FM REG 1B4 set
+FC xx: FM REG 1B5 set
+FD xx: FM REG 1B6 set
+FE xx: PSG set
+FF 00: DAC stop
+FF xx: (xx>0): DAC play sample xx
+
+Sample Replay uses hsync replay - 15628hz
+PAL:  15556.557hz
+NTSC: 15699.759hz
+VGM:  15628 ~ 72hz difference to either PAL/NTSC
+
+Timer-B is used for Delay Timing
