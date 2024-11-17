@@ -523,4 +523,4 @@ if __name__ == "__main__":
         f.write(picdat)
         f.write(vgmdat)
     
-# vim:list:listchars=tab\:>-:set ts=4 sw=4 sws=4 et:
+# vim:list:listchars=tab\:>-:set ts=4 sw=4 et:
